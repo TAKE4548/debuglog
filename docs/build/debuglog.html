@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>debuglog package &mdash; debuglog 0.0.1 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootswatch-cyborg.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" href="_static/css/adjust_theme/bootswatch-cyborg.css" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '0.0.1',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="debuglog 0.0.1 documentation" href="index.html" />
+    <link rel="up" title="debuglog" href="modules.html" />
+    <link rel="prev" title="debuglog" href="modules.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">debuglog 0.0.1 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">debuglog package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-debuglog.debuglog">debuglog.debuglog module</a></li>
+<li><a class="reference internal" href="#module-debuglog">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="modules.html" title="debuglog" accesskey="P">previous </a></li>
+              <li><a href="py-modindex.html" title="Python Module Index" >modules </a></li>
+              <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
+              <li><a href="modules.html" accesskey="U">debuglog</a></li>
+            
+            <li class="visible-xs"><a href="_sources/debuglog.rst.txt" rel="nofollow">Show Source</a></li>
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">debuglog package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-debuglog.debuglog">debuglog.debuglog module</a></li>
+<li><a class="reference internal" href="#module-debuglog">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="previous chapter">debuglog</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/debuglog.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="debuglog-package">
+<h1>debuglog package<a class="headerlink" href="#debuglog-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-debuglog.debuglog">
+<span id="debuglog-debuglog-module"></span><h2>debuglog.debuglog module<a class="headerlink" href="#module-debuglog.debuglog" title="Permalink to this headline">¶</a></h2>
+<p>デバッグ用のログ機能を提供するモジュール</p>
+<p>標準の <cite>logging</cite> モジュールを使い、
+デバッグ用のログとして必要そうな機能を持つ</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本モジュールを <cite>import</cite> すると、<cite>logging</cite> モジュールに
+<cite>“PRINT_INFO”</cite> という名称で、
+<cite>logging.INFO</cite> より <cite>1</cite> だけ高いレベルが追加される。</p>
+</div>
+<dl class="function">
+<dt id="debuglog.debuglog.calledlog">
+<code class="sig-prename descclassname">debuglog.debuglog.</code><code class="sig-name descname">calledlog</code><span class="sig-paren">(</span><em class="sig-param">func: symtable.Function</em><span class="sig-paren">)</span><a class="headerlink" href="#debuglog.debuglog.calledlog" title="Permalink to this definition">¶</a></dt>
+<dd><p>関数の呼出し開始と終了をデバッグログに出力するデコレータ</p>
+<p>修飾すると <cite>logging.DEBUG</cite> レベルでログファイルに、
+対象関数の呼出し開始と完了のタイミングを出力する.
+また、関数の呼出し開始～完了にかかった時間(≒処理時間)も出力する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>func</strong> (<em>Function</em>) – 修飾する関数</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>修飾したラッパー関数</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Function</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">debuglog</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nd">@debuglog</span><span class="o">.</span><span class="n">calledlog</span>
+<span class="gp">... </span><span class="k">def</span> <span class="nf">sample</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sample&quot;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="p">()</span>
+<span class="go">sample</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./log/debug.log</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>yyyy-MM-dd hh:mm:ss,xxx debuglog.py     223     DEBUG   --- Maked RootLogger &quot;debug&quot; -----
+yyyy-MM-dd hh:mm:ss,xxx debuglog.py     228     DEBUG   --- Changed ChildLogger &quot;debug.__main__&quot; -----
+yyyy-MM-dd hh:mm:ss,xxx debuglog.py     245     DEBUG   ================================================================================
+yyyy-MM-dd hh:mm:ss,xxx debuglog.py     246     DEBUG   Started the __main__.sample
+yyyy-MM-dd hh:mm:ss,xxx debuglog.py     247     DEBUG   --------------------------------------------------------------------------------
+yyyy-MM-dd hh:mm:ss,xxx debuglog.py     251     DEBUG   --------------------------------------------------------------------------------
+yyyy-MM-dd hh:mm:ss,xxx debuglog.py     252     DEBUG   Proccessing Time        0:00:00.022490
+yyyy-MM-dd hh:mm:ss,xxx debuglog.py     253     DEBUG   Terminated the __main__.sample
+yyyy-MM-dd hh:mm:ss,xxx debuglog.py     254     DEBUG   ================================================================================
+</pre></div>
+</td></tr></table></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="debuglog.debuglog.get_debug_logger">
+<code class="sig-prename descclassname">debuglog.debuglog.</code><code class="sig-name descname">get_debug_logger</code><span class="sig-paren">(</span><em class="sig-param">child_name: Optional[str] = None</em>, <em class="sig-param">path: Union[str</em>, <em class="sig-param">pathlib.Path</em>, <em class="sig-param">None] = None</em>, <em class="sig-param">can_append: bool = True</em><span class="sig-paren">)</span> &#x2192; logging.Logger<a class="headerlink" href="#debuglog.debuglog.get_debug_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>デバッグ用のロガーを取得する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>child_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – 子ロガーを設定する場合の識別子.
+Noneの場合は親ロガーを返す.
+デフォルトはNone.</p></li>
+<li><p><strong>path</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Path</em><em>, </em><em>None</em><em>]</em>) – ロガー生成時に設定するファイルハンドラへのパス.
+未指定の場合、<cite>_DEFAULT_LOG_FILE</cite>
+に設定されているパスになる.
+ロガー取得時は設定していても無視される.</p></li>
+<li><p><strong>can_append</strong> (<em>bool</em>) – ファイルハンドラのファイルが既存の場合に追記するか.
+Trueで追記する、Falseだと先頭から上書きになる.
+デフォルトはTrue</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>取得/作成したロガー</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>logging.Logger</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>もし、ハンドラを追加したいときは、
+本関数で <cite>Logger</cite> インスタンスを取得後に
+呼び出し元で <cite>addHandler</cite> を使用する.
+ハンドラは <cite>logger</cite> モジュールの標準的な手順で生成する.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">debuglog</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">debug_logger</span> <span class="o">=</span> <span class="n">debuglog</span><span class="o">.</span><span class="n">get_debug_logger</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">debug_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;debug&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">debug_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;info&quot;</span><span class="p">)</span>
+<span class="go">INFO    info</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">debug_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;warning&quot;</span><span class="p">)</span>
+<span class="go">WARNING warning</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./log/debug.log</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>yyyy-MM-dd hh:mm:ss,xxx debuglog.py     221     DEBUG   --- Maked RootLogger &quot;debug&quot; -----
+yyyy-MM-dd hh:mm:ss,xxx &lt;stdin&gt; 1       DEBUG   debug
+yyyy-MM-dd hh:mm:ss,xxx &lt;stdin&gt; 1       INFO    info
+yyyy-MM-dd hh:mm:ss,xxx &lt;stdin&gt; 1       WARNING warning
+</pre></div>
+</td></tr></table></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="debuglog.debuglog.set_fhandler_format">
+<code class="sig-prename descclassname">debuglog.debuglog.</code><code class="sig-name descname">set_fhandler_format</code><span class="sig-paren">(</span><em class="sig-param">_format: Union[str, logging.Formatter]</em><span class="sig-paren">)</span><a class="headerlink" href="#debuglog.debuglog.set_fhandler_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>ファイルハンドラのフォーマットを設定する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>_format</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>logging.Formatter</em><em>]</em>) – 設定するフォーマット.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>フォーマットを反映したフォーマッタ.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>logging.Formatter</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – <cite>_format</cite> に <cite>str</cite> , <cite>logging.Formatter</cite>
+    以外のタイプを渡した時に発生.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>指定するフォーマットについては、公式ドキュメントを参照.
+<a class="reference external" href="https://docs.python.org/ja/3/library/logging.html#formatter-objects">https://docs.python.org/ja/3/library/logging.html#formatter-objects</a></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="debuglog.debuglog.set_shandler_format">
+<code class="sig-prename descclassname">debuglog.debuglog.</code><code class="sig-name descname">set_shandler_format</code><span class="sig-paren">(</span><em class="sig-param">_format: Union[str, logging.Formatter]</em><span class="sig-paren">)</span><a class="headerlink" href="#debuglog.debuglog.set_shandler_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>ストリームハンドラのフォーマットを設定する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>_format</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>logging.Formatter</em><em>]</em>) – 設定するフォーマット.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>フォーマットを反映したフォーマッタ.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>logging.Formatter</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – <cite>_format</cite> に <cite>str</cite> , <cite>logging.Formatter</cite>
+    以外のタイプを渡した時に発生.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>指定するフォーマットについては、公式ドキュメントを参照.
+<a class="reference external" href="https://docs.python.org/ja/3/library/logging.html#formatter-objects">https://docs.python.org/ja/3/library/logging.html#formatter-objects</a></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-debuglog">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-debuglog" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">debuglog 0.0.1 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="modules.html" title="debuglog" >previous</a></li>
+        <li><a href="py-modindex.html" title="Python Module Index" >modules</a></li>
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="modules.html" >debuglog</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2019, Shota Takeda.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.2.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>
