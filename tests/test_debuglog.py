@@ -153,3 +153,10 @@ class TestDebugLogDecorator(DebugLogTestBase):
                 self.assertTrue(re.fullmatch(v, o))
             else:
                 self.assertEqual(o, v)
+
+    def test_wrap_metainfo(self):
+        """デコレータのラッパーがメタ情報を継承しているか確認する"""
+        @debuglog.calledlog
+        def wrap_meth():
+            pass
+        self.assertEqual(wrap_meth.__name__, "wrap_meth")

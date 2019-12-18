@@ -12,6 +12,7 @@ note:
 """
 
 
+import functools
 import logging
 import sys
 from pathlib import Path
@@ -266,6 +267,7 @@ def calledlog(func: Function):
         yyyy-MM-dd hh:mm:ss,xxx	debuglog.py	253	DEBUG	Terminated the __main__.sample
         yyyy-MM-dd hh:mm:ss,xxx	debuglog.py	254	DEBUG	================================================================================
     """
+    @functools.wraps(func)
     def wapper(*args, **kwargs):
         fname = "{}.{}".format(func.__module__, func.__qualname__)
         debug_logger = get_debug_logger(child_name=func.__module__)
