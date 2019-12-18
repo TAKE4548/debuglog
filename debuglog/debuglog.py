@@ -22,7 +22,7 @@ from datetime import datetime as dt
 
 
 # 表示用のINFOレベルを設定
-logging.addLevelName(logging.INFO + 1, "PRINT_INFO")
+logging.addLevelName(logging.INFO + 1, "PINFO")
 
 
 # ロガーのデフォルト設定

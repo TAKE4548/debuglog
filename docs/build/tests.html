@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>tests package &mdash; debuglog 0.0.1 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootswatch-cyborg.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" href="_static/css/adjust_theme/bootswatch-cyborg.css" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '0.0.1',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="debuglog 0.0.1 documentation" href="index.html" />
+    <link rel="up" title="debuglog" href="modules.html" />
+    <link rel="prev" title="debuglog package" href="debuglog.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">debuglog 0.0.1 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">tests package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-tests.test_debuglog">tests.test_debuglog module</a></li>
+<li><a class="reference internal" href="#module-tests.test_measuretime">tests.test_measuretime module</a></li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="debuglog.html" title="debuglog package" accesskey="P">previous </a></li>
+              <li><a href="py-modindex.html" title="Python Module Index" >modules </a></li>
+              <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
+              <li><a href="modules.html" accesskey="U">debuglog</a></li>
+            
+            <li class="visible-xs"><a href="_sources/tests.rst.txt" rel="nofollow">Show Source</a></li>
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">tests package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-tests.test_debuglog">tests.test_debuglog module</a></li>
+<li><a class="reference internal" href="#module-tests.test_measuretime">tests.test_measuretime module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="debuglog.html"
+                        title="previous chapter">debuglog package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tests.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="module-tests">
+<span id="tests-package"></span><h1>tests package<a class="headerlink" href="#module-tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tests.test_debuglog">
+<span id="tests-test-debuglog-module"></span><h2>tests.test_debuglog module<a class="headerlink" href="#module-tests.test_debuglog" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="tests.test_debuglog.DebugLogTestBase">
+<em class="property">class </em><code class="sig-prename descclassname">tests.test_debuglog.</code><code class="sig-name descname">DebugLogTestBase</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.DebugLogTestBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="tests.test_debuglog.DebugLogTestBase.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.DebugLogTestBase.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_debuglog.DebugLogTestBase.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.DebugLogTestBase.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tests.test_debuglog.TestDebugLogDecorator">
+<em class="property">class </em><code class="sig-prename descclassname">tests.test_debuglog.</code><code class="sig-name descname">TestDebugLogDecorator</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestDebugLogDecorator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tests.test_debuglog.DebugLogTestBase" title="tests.test_debuglog.DebugLogTestBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">tests.test_debuglog.DebugLogTestBase</span></code></a></p>
+<p><cite>debuglog.calledlog()</cite> 関連のテスト</p>
+<dl class="method">
+<dt id="tests.test_debuglog.TestDebugLogDecorator.sleep1">
+<em class="property">static </em><code class="sig-name descname">sleep1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestDebugLogDecorator.sleep1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tests.test_debuglog.TestDebugLogDecorator.sleep2">
+<em class="property">static </em><code class="sig-name descname">sleep2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestDebugLogDecorator.sleep2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tests.test_debuglog.TestDebugLogDecorator.test_calledlog">
+<code class="sig-name descname">test_calledlog</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestDebugLogDecorator.test_calledlog" title="Permalink to this definition">¶</a></dt>
+<dd><p>関数呼出しによるデコレータの効果を確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_debuglog.TestDebugLogDecorator.test_wrap_metainfo">
+<code class="sig-name descname">test_wrap_metainfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestDebugLogDecorator.test_wrap_metainfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>デコレータのラッパーがメタ情報を継承しているか確認する</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tests.test_debuglog.TestLoggerGetting">
+<em class="property">class </em><code class="sig-prename descclassname">tests.test_debuglog.</code><code class="sig-name descname">TestLoggerGetting</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestLoggerGetting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tests.test_debuglog.DebugLogTestBase" title="tests.test_debuglog.DebugLogTestBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">tests.test_debuglog.DebugLogTestBase</span></code></a></p>
+<p><cite>debuglog.get_debug_logger()</cite> 関連のテスト</p>
+<dl class="method">
+<dt id="tests.test_debuglog.TestLoggerGetting.test_loglevel">
+<code class="sig-name descname">test_loglevel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestLoggerGetting.test_loglevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>DEBUG以上のログメッセージが出力さるか確認</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_debuglog.TestLoggerGetting.test_make_logger">
+<code class="sig-name descname">test_make_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestLoggerGetting.test_make_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>ハンドラが設定されたロガーが取得されるか確認</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_debuglog.TestLoggerGetting.test_overwrite">
+<code class="sig-name descname">test_overwrite</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestLoggerGetting.test_overwrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>上書き指定でファイルが上書きされているか確認</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_debuglog.TestLoggerGetting.test_unique_path">
+<code class="sig-name descname">test_unique_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_debuglog.TestLoggerGetting.test_unique_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>パスを指定してファイルハンドラに設定されるか確認</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tests.test_measuretime">
+<span id="tests-test-measuretime-module"></span><h2>tests.test_measuretime module<a class="headerlink" href="#module-tests.test_measuretime" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="tests.test_measuretime.TestMeasureTime">
+<em class="property">class </em><code class="sig-prename descclassname">tests.test_measuretime.</code><code class="sig-name descname">TestMeasureTime</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p><cite>MeasureTime</cite> 関連のテスト</p>
+<dl class="attribute">
+<dt id="tests.test_measuretime.TestMeasureTime.err">
+<code class="sig-name descname">err</code><em class="property"> = datetime.timedelta(microseconds=100000)</em><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.err" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_endtime_norecord">
+<code class="sig-name descname">test_endtime_norecord</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_endtime_norecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>記録がないときの最終記録時刻が計測開始時刻であるか確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_endtime_recorded">
+<code class="sig-name descname">test_endtime_recorded</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_endtime_recorded" title="Permalink to this definition">¶</a></dt>
+<dd><p>記録があるときの最終記録時刻が記録時刻で変化するか確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_laptime">
+<code class="sig-name descname">test_laptime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_laptime" title="Permalink to this definition">¶</a></dt>
+<dd><p>ラップタイムが正しく取得できるか確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_record">
+<code class="sig-name descname">test_record</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>記録された時間が正しいか確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_record_event">
+<code class="sig-name descname">test_record_event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_record_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>イベント名を指定した記録が保持されているか確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_record_noevent">
+<code class="sig-name descname">test_record_noevent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_record_noevent" title="Permalink to this definition">¶</a></dt>
+<dd><p>イベント名を指定しなかった記録が保持されているか確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_restarttime">
+<code class="sig-name descname">test_restarttime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_restarttime" title="Permalink to this definition">¶</a></dt>
+<dd><p>計測開始時刻が正しく設定されるか確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_splittime">
+<code class="sig-name descname">test_splittime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_splittime" title="Permalink to this definition">¶</a></dt>
+<dd><p>スプリットタイムが正しく取得できるか確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_starttime">
+<code class="sig-name descname">test_starttime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_starttime" title="Permalink to this definition">¶</a></dt>
+<dd><p>計測開始時刻が正しく設定されるか確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestMeasureTime.test_totaltime">
+<code class="sig-name descname">test_totaltime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_totaltime" title="Permalink to this definition">¶</a></dt>
+<dd><p>トータルタイムが正しく取得できるか確認する</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">debuglog 0.0.1 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="debuglog.html" title="debuglog package" >previous</a></li>
+        <li><a href="py-modindex.html" title="Python Module Index" >modules</a></li>
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="modules.html" >debuglog</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2019, Shota Takeda.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.2.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

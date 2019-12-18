@@ -51,6 +51,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="debuglog 0.0.1 documentation" href="index.html" />
     <link rel="up" title="debuglog" href="modules.html" />
+    <link rel="next" title="tests package" href="tests.html" />
     <link rel="prev" title="debuglog" href="modules.html" /> 
   </head>
   <body role="document">
@@ -74,7 +75,7 @@
 <li><a class="reference internal" href="#">debuglog package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-debuglog.debuglog">debuglog.debuglog module</a></li>
-<li><a class="reference internal" href="#module-debuglog">Module contents</a></li>
+<li><a class="reference internal" href="#module-debuglog.measuretime">debuglog.measuretime module</a></li>
 </ul>
 </li>
 </ul>
@@ -84,6 +85,7 @@
 
             
               <li><a href="modules.html" title="debuglog" accesskey="P">previous </a></li>
+              <li><a href="tests.html" title="tests package" accesskey="N">next </a></li>
               <li><a href="py-modindex.html" title="Python Module Index" >modules </a></li>
               <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
               <li><a href="modules.html" accesskey="U">debuglog</a></li>
@@ -125,7 +127,7 @@
 <li><a class="reference internal" href="#">debuglog package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-debuglog.debuglog">debuglog.debuglog module</a></li>
-<li><a class="reference internal" href="#module-debuglog">Module contents</a></li>
+<li><a class="reference internal" href="#module-debuglog.measuretime">debuglog.measuretime module</a></li>
 </ul>
 </li>
 </ul>
@@ -133,6 +135,9 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="modules.html"
                         title="previous chapter">debuglog</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tests.html"
+                        title="next chapter">tests package</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -166,8 +171,8 @@
               <div class="bodywrapper">
                 <div class="body">
                   
-  <div class="section" id="debuglog-package">
-<h1>debuglog package<a class="headerlink" href="#debuglog-package" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-debuglog">
+<span id="debuglog-package"></span><h1>debuglog package<a class="headerlink" href="#module-debuglog" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -344,8 +349,165 @@ yyyy-MM-dd hh:mm:ss,xxx &lt;stdin&gt; 1       WARNING warning
 </dd></dl>
 
 </div>
-<div class="section" id="module-debuglog">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-debuglog" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-debuglog.measuretime">
+<span id="debuglog-measuretime-module"></span><h2>debuglog.measuretime module<a class="headerlink" href="#module-debuglog.measuretime" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="debuglog.measuretime.MeasureTime">
+<em class="property">class </em><code class="sig-prename descclassname">debuglog.measuretime.</code><code class="sig-name descname">MeasureTime</code><span class="sig-paren">(</span><em class="sig-param">name: Optional[str] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#debuglog.measuretime.MeasureTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>時間計測の機能を提供するクラス</p>
+<dl class="attribute">
+<dt id="debuglog.measuretime.MeasureTime.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#debuglog.measuretime.MeasureTime.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>時間計測インスタンスの名前</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="debuglog.measuretime.MeasureTime.start">
+<code class="sig-name descname">start</code><a class="headerlink" href="#debuglog.measuretime.MeasureTime.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>計測開始時刻</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="debuglog.measuretime.MeasureTime.end">
+<code class="sig-name descname">end</code><a class="headerlink" href="#debuglog.measuretime.MeasureTime.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>最終記録時刻</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="debuglog.measuretime.MeasureTime.Laptime">
+<em class="property">class </em><code class="sig-name descname">Laptime</code><span class="sig-paren">(</span><em class="sig-param">event</em>, <em class="sig-param">time</em><span class="sig-paren">)</span><a class="headerlink" href="#debuglog.measuretime.MeasureTime.Laptime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="method">
+<dt id="debuglog.measuretime.MeasureTime.Laptime.event">
+<em class="property">property </em><code class="sig-name descname">event</code><a class="headerlink" href="#debuglog.measuretime.MeasureTime.Laptime.event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="debuglog.measuretime.MeasureTime.Laptime.time">
+<em class="property">property </em><code class="sig-name descname">time</code><a class="headerlink" href="#debuglog.measuretime.MeasureTime.Laptime.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="debuglog.measuretime.MeasureTime.Splittime">
+<em class="property">class </em><code class="sig-name descname">Splittime</code><span class="sig-paren">(</span><em class="sig-param">event</em>, <em class="sig-param">time</em><span class="sig-paren">)</span><a class="headerlink" href="#debuglog.measuretime.MeasureTime.Splittime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="method">
+<dt id="debuglog.measuretime.MeasureTime.Splittime.event">
+<em class="property">property </em><code class="sig-name descname">event</code><a class="headerlink" href="#debuglog.measuretime.MeasureTime.Splittime.event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="debuglog.measuretime.MeasureTime.Splittime.time">
+<em class="property">property </em><code class="sig-name descname">time</code><a class="headerlink" href="#debuglog.measuretime.MeasureTime.Splittime.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">end</code></dt>
+<dd><p>最終記録時刻を取得する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="debuglog.measuretime.MeasureTime.get_laptime">
+<code class="sig-name descname">get_laptime</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; debuglog.measuretime.Laptime<a class="headerlink" href="#debuglog.measuretime.MeasureTime.get_laptime" title="Permalink to this definition">¶</a></dt>
+<dd><p>ラップタイム先頭から順番に取得する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>MeasureTime.Laptime</em> – 取得したラップタイム</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ラップタイムは前区間からの経過時間.
+前区間の記録時刻を起点に計算される.
+スタート-区間はスプリットタイム
+<a class="reference internal" href="#debuglog.measuretime.MeasureTime.get_splittime" title="debuglog.measuretime.MeasureTime.get_splittime"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_splittime()</span></code></a> を使用.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="debuglog.measuretime.MeasureTime.get_splittime">
+<code class="sig-name descname">get_splittime</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; debuglog.measuretime.Splittime<a class="headerlink" href="#debuglog.measuretime.MeasureTime.get_splittime" title="Permalink to this definition">¶</a></dt>
+<dd><p>スプリットタイムを先頭から順番に取得する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>MeasureTime.Splittime</em> – 取得したスプリットタイム</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>スプリットタイムはスタートからの経過時間.
+区間に限らず起点はスタート時刻で計算される.
+区間-区間はラップタイム
+<a class="reference internal" href="#debuglog.measuretime.MeasureTime.get_laptime" title="debuglog.measuretime.MeasureTime.get_laptime"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_laptime()</span></code></a> を使用.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="debuglog.measuretime.MeasureTime.record_restart">
+<code class="sig-name descname">record_restart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#debuglog.measuretime.MeasureTime.record_restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>計測をやり直す</p>
+<p>通常はインスタンス生成時の時刻をスタートとするが、
+インスタンス生成と計測開始のタイミングを分けたい場合、
+本メソッドを呼んだところがスタートとなる.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="debuglog.measuretime.MeasureTime.record_split">
+<code class="sig-name descname">record_split</code><span class="sig-paren">(</span><em class="sig-param">event: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; debuglog.measuretime.Splittime<a class="headerlink" href="#debuglog.measuretime.MeasureTime.record_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>スプリットタイムを記録する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – 記録タイミングのイベント名.
+不要な場合は省略可.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>記録したスプリットタイム</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#debuglog.measuretime.MeasureTime.Splittime" title="debuglog.measuretime.MeasureTime.Splittime">MeasureTime.Splittime</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">start</code></dt>
+<dd><p>計測開始時刻を取得する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="debuglog.measuretime.MeasureTime.totaltime">
+<em class="property">property </em><code class="sig-name descname">totaltime</code><a class="headerlink" href="#debuglog.measuretime.MeasureTime.totaltime" title="Permalink to this definition">¶</a></dt>
+<dd><p>スタートから最終記録時刻までの時間を取得する</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 
@@ -369,6 +531,7 @@ yyyy-MM-dd hh:mm:ss,xxx &lt;stdin&gt; 1       WARNING warning
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
         <li><a href="modules.html" title="debuglog" >previous</a></li>
+        <li><a href="tests.html" title="tests package" >next</a></li>
         <li><a href="py-modindex.html" title="Python Module Index" >modules</a></li>
         <li><a href="genindex.html" title="General Index" >index</a></li>
         <li><a href="modules.html" >debuglog</a></li>

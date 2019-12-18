@@ -127,32 +127,28 @@ class TestDebugLogDecorator(DebugLogTestBase):
             self.sleep1()
             self.sleep2()
         # ログが出るか確認
-        head = ':'.join(["DEBUG", "{}.{}".format(self.debug_logger.name, Path(__file__).stem)])
+        head = "DEBUG:" + self.debug_logger.name + "\..*" + Path(__file__).stem + ':'
         sep1 = '=' * 80
         sep2 = '-' * 80
         for o, v in zip(cm.output, [
-            head + ':' + "--- Changed ChildLogger \"{}.{}\" -----".format(self.debug_logger.name, Path(__file__).stem),
-            head + ':' + sep1,
-            head + ':' + "Started the {}.{}.sleep1".format(self.__module__, self.__class__.__name__),
-            head + ':' + sep2,
-            head + ':' + sep2,
-            head + ':' + "Proccessing Time\t{}(\.[0-9]+)?".format(td(seconds=1)),
-            head + ':' + "Terminated the {}.{}.sleep1".format(self.__module__, self.__class__.__name__),
-            head + ':' + sep1,
-            head + ':' + "--- Changed ChildLogger \"{}.{}\" -----".format(self.debug_logger.name, Path(__file__).stem),
-            head + ':' + sep1,
-            head + ':' + "Started the {}.{}.sleep2".format(self.__module__, self.__class__.__name__),
-            head + ':' + sep2,
-            head + ':' + sep2,
-            head + ':' + "Proccessing Time\t{}(\.[0-9]+)?".format(td(seconds=2)),
-            head + ':' + "Terminated the {}.{}.sleep2".format(self.__module__, self.__class__.__name__),
-            head + ':' + sep1
+            head + "--- Changed ChildLogger \"" + self.debug_logger.name + "\..*" + Path(__file__).stem + "\" -----",
+            head + sep1,
+            head + "Started the {}.{}.sleep1".format(self.__module__, self.__class__.__name__),
+            head + sep2,
+            head + sep2,
+            head + "Proccessing Time\t{}(\.[0-9]+)?".format(td(seconds=1)),
+            head + "Terminated the {}.{}.sleep1".format(self.__module__, self.__class__.__name__),
+            head + sep1,
+            head + "--- Changed ChildLogger \"" + self.debug_logger.name + "\..*" + Path(__file__).stem + "\" -----",
+            head + sep1,
+            head + "Started the {}.{}.sleep2".format(self.__module__, self.__class__.__name__),
+            head + sep2,
+            head + sep2,
+            head + "Proccessing Time\t{}(\.[0-9]+)?".format(td(seconds=2)),
+            head + "Terminated the {}.{}.sleep2".format(self.__module__, self.__class__.__name__),
+            head + sep1
         ]):
-            # 処理時間の値は正規表現で不変部分のみ判定
-            if "Proccessing" in v:
-                self.assertTrue(re.fullmatch(v, o))
-            else:
-                self.assertEqual(o, v)
+            self.assertTrue(re.fullmatch(v, o))
 
     def test_wrap_metainfo(self):
         """デコレータのラッパーがメタ情報を継承しているか確認する"""

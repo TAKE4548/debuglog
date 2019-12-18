@@ -1,6 +1,11 @@
 debuglog package
 ================
 
+.. automodule:: debuglog
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Submodules
 ----------
 
@@ -12,11 +17,11 @@ debuglog.debuglog module
    :undoc-members:
    :show-inheritance:
 
+debuglog.measuretime module
+---------------------------
 
-Module contents
----------------
-
-.. automodule:: debuglog
+.. automodule:: debuglog.measuretime
    :members:
    :undoc-members:
    :show-inheritance:
+
