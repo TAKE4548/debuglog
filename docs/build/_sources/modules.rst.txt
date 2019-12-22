@@ -5,4 +5,3 @@ debuglog
    :maxdepth: 4
 
    debuglog
-   tests

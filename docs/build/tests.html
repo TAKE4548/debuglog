@@ -49,9 +49,7 @@
 </script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="debuglog 0.0.1 documentation" href="index.html" />
-    <link rel="up" title="debuglog" href="modules.html" />
-    <link rel="prev" title="debuglog package" href="debuglog.html" /> 
+    <link rel="top" title="debuglog 0.0.1 documentation" href="index.html" /> 
   </head>
   <body role="document">
     <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
@@ -83,10 +81,8 @@
               </li>
 
             
-              <li><a href="debuglog.html" title="debuglog package" accesskey="P">previous </a></li>
               <li><a href="py-modindex.html" title="Python Module Index" >modules </a></li>
               <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
-              <li><a href="modules.html" accesskey="U">debuglog</a></li>
             
             <li class="visible-xs"><a href="_sources/tests.rst.txt" rel="nofollow">Show Source</a></li>
 
@@ -130,9 +126,6 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="debuglog.html"
-                        title="previous chapter">debuglog package</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -255,85 +248,114 @@
 <div class="section" id="module-tests.test_measuretime">
 <span id="tests-test-measuretime-module"></span><h2>tests.test_measuretime module<a class="headerlink" href="#module-tests.test_measuretime" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="tests.test_measuretime.TestMeasureTime">
-<em class="property">class </em><code class="sig-prename descclassname">tests.test_measuretime.</code><code class="sig-name descname">TestMeasureTime</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer">
+<em class="property">class </em><code class="sig-prename descclassname">tests.test_measuretime.</code><code class="sig-name descname">TestTimeMeasurer</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
-<p><cite>MeasureTime</cite> 関連のテスト</p>
+<p><cite>TimeMeasurer</cite> 関連のテスト</p>
 <dl class="attribute">
-<dt id="tests.test_measuretime.TestMeasureTime.err">
-<code class="sig-name descname">err</code><em class="property"> = datetime.timedelta(microseconds=100000)</em><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.err" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.err">
+<code class="sig-name descname">err</code><em class="property"> = datetime.timedelta(microseconds=100000)</em><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.err" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.setUp">
-<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.setUp" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.setUp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hook method for setting up the test fixture before exercising it.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.tearDown">
-<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.tearDown" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.tearDown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hook method for deconstructing the test fixture after testing it.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_endtime_norecord">
-<code class="sig-name descname">test_endtime_norecord</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_endtime_norecord" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_del">
+<code class="sig-name descname">test_del</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_del" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>TimeMeasurer</cite> を削除したら管理辞書からも削除されることを確認する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_endtime_norecord">
+<code class="sig-name descname">test_endtime_norecord</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_endtime_norecord" title="Permalink to this definition">¶</a></dt>
 <dd><p>記録がないときの最終記録時刻が計測開始時刻であるか確認する</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_endtime_recorded">
-<code class="sig-name descname">test_endtime_recorded</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_endtime_recorded" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_endtime_recorded">
+<code class="sig-name descname">test_endtime_recorded</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_endtime_recorded" title="Permalink to this definition">¶</a></dt>
 <dd><p>記録があるときの最終記録時刻が記録時刻で変化するか確認する</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_laptime">
-<code class="sig-name descname">test_laptime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_laptime" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_laptime">
+<code class="sig-name descname">test_laptime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_laptime" title="Permalink to this definition">¶</a></dt>
 <dd><p>ラップタイムが正しく取得できるか確認する</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_record">
-<code class="sig-name descname">test_record</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_record" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_record">
+<code class="sig-name descname">test_record</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_record" title="Permalink to this definition">¶</a></dt>
 <dd><p>記録された時間が正しいか確認する</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_record_event">
-<code class="sig-name descname">test_record_event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_record_event" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_record_event">
+<code class="sig-name descname">test_record_event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_record_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>イベント名を指定した記録が保持されているか確認する</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_record_noevent">
-<code class="sig-name descname">test_record_noevent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_record_noevent" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_record_noevent">
+<code class="sig-name descname">test_record_noevent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_record_noevent" title="Permalink to this definition">¶</a></dt>
 <dd><p>イベント名を指定しなかった記録が保持されているか確認する</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_restarttime">
-<code class="sig-name descname">test_restarttime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_restarttime" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_restarttime">
+<code class="sig-name descname">test_restarttime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_restarttime" title="Permalink to this definition">¶</a></dt>
 <dd><p>計測開始時刻が正しく設定されるか確認する</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_splittime">
-<code class="sig-name descname">test_splittime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_splittime" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_splittime">
+<code class="sig-name descname">test_splittime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_splittime" title="Permalink to this definition">¶</a></dt>
 <dd><p>スプリットタイムが正しく取得できるか確認する</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_starttime">
-<code class="sig-name descname">test_starttime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_starttime" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_starttime">
+<code class="sig-name descname">test_starttime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_starttime" title="Permalink to this definition">¶</a></dt>
 <dd><p>計測開始時刻が正しく設定されるか確認する</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="tests.test_measuretime.TestMeasureTime.test_totaltime">
-<code class="sig-name descname">test_totaltime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestMeasureTime.test_totaltime" title="Permalink to this definition">¶</a></dt>
+<dt id="tests.test_measuretime.TestTimeMeasurer.test_totaltime">
+<code class="sig-name descname">test_totaltime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurer.test_totaltime" title="Permalink to this definition">¶</a></dt>
 <dd><p>トータルタイムが正しく取得できるか確認する</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tests.test_measuretime.TestTimeMeasurerManager">
+<em class="property">class </em><code class="sig-prename descclassname">tests.test_measuretime.</code><code class="sig-name descname">TestTimeMeasurerManager</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurerManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p><cite>TimeMeasurersManager</cite> 関連のテスト</p>
+<dl class="attribute">
+<dt id="tests.test_measuretime.TestTimeMeasurerManager.err">
+<code class="sig-name descname">err</code><em class="property"> = datetime.timedelta(microseconds=1000)</em><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurerManager.err" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestTimeMeasurerManager.sample_meth">
+<code class="sig-name descname">sample_meth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurerManager.sample_meth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tests.test_measuretime.TestTimeMeasurerManager.test_record_func_runtime">
+<code class="sig-name descname">test_record_func_runtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_measuretime.TestTimeMeasurerManager.test_record_func_runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>関数の実行時間計測デコレータが正しく機能しているか確認する</p>
 </dd></dl>
 
 </dd></dl>
@@ -360,10 +382,8 @@
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
-        <li><a href="debuglog.html" title="debuglog package" >previous</a></li>
         <li><a href="py-modindex.html" title="Python Module Index" >modules</a></li>
         <li><a href="genindex.html" title="General Index" >index</a></li>
-        <li><a href="modules.html" >debuglog</a></li>
         <li><a href="#">top</a></li> 
       
     </ul>
