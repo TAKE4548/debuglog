@@ -20,14 +20,13 @@ from typing import Optional, Union
 from symtable import Function
 from datetime import datetime as dt
 
-
 # 表示用のINFOレベルを設定
 logging.addLevelName(logging.INFO + 1, "PINFO")
 
 
 # ロガーのデフォルト設定
 _DEFAULT_LOGGER_NAME = "debug"
-_DEFAULT_LOG_FILE = Path("./log/debug.log")
+DEFAULT_LOG_FILE = Path("./log/debug.log")
 
 # ハンドラのフォーマッタ
 _STREAM_HANDLER_FORMAT = logging.Formatter('\t'.join([
@@ -159,7 +158,7 @@ def get_debug_logger(
             デフォルトはNone.
         path (Union[str, Path, None]):
             ロガー生成時に設定するファイルハンドラへのパス.
-            未指定の場合、`_DEFAULT_LOG_FILE`
+            未指定の場合、`DEFAULT_LOG_FILE`
             に設定されているパスになる.
             ロガー取得時は設定していても無視される.
         can_append (bool):
@@ -201,7 +200,7 @@ def get_debug_logger(
     if not root_logger.hasHandlers():
         # 未指定ならカレント下にデフォルト名で作る
         if path is None:
-            path = _DEFAULT_LOG_FILE
+            path = DEFAULT_LOG_FILE
         # ファイル/ディレクトリがなかったら作る
         path = Path(path)
         path.parent.mkdir(parents=True, exist_ok=True)

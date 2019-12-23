@@ -6,6 +6,7 @@ import unittest
 import time
 from datetime import timedelta as td
 from datetime import datetime as dt
+from pathlib import Path
 
 import debuglog
 
@@ -132,3 +133,33 @@ class TestTimeMeasurerManager(unittest.TestCase):
                     lap.time, td(seconds=1) - self.__class__.err
                 )
 
+
+class TestTimeMeasurerOutput(unittest.TestCase):
+    """ `TimeMeasurer` の出力関連のテスト"""
+    def setUp(self):
+        self.mt = debuglog.get_measurer("test")
+
+    def tearDown(self):
+        debuglog.pop_measurer(self.mt.name)
+
+    @debuglog.time_record("test")
+    def sample_meth(self):
+        time.sleep(1)
+
+    def test_out_csv_nopath(self):
+        """パス未指定でのcsv出力の確認をする"""
+        self.sample_meth()
+        self.sample_meth()
+        path = self.mt.to_csv()
+        csv_path = debuglog.DEFAULT_LOG_FILE.parent / (self.mt.name + '.csv')
+        self.assertTrue(csv_path.exists())
+        path.unlink()
+
+    def test_out_csv(self):
+        """パス指定でのcsv出力の確認をする"""
+        self.sample_meth()
+        self.sample_meth()
+        path = self.mt.to_csv("test.csv")
+        csv_path = Path("test.csv")
+        self.assertTrue(csv_path.exists())
+        path.unlink()

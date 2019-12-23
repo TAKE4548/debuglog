@@ -4,12 +4,20 @@
 
 from __future__ import annotations
 import functools
-from typing import Optional, Any
+import csv
+from typing import Optional, Union, Any
+from pathlib import Path
 from collections import namedtuple
 from symtable import Function
 from datetime import datetime as dt
 from datetime import timedelta as td
 from copy import deepcopy
+from random import randint
+from time import sleep
+
+from matplotlib import pyplot as plt
+
+DEFAULT_LOG_DIR = Path("./log")
 
 
 class TimeMeasurer:
@@ -143,7 +151,7 @@ class TimeMeasurer:
         prev = td(seconds=0)
         for splt in self.__splittimes:
             lap = splt.time - prev
-            prev += splt.time
+            prev = splt.time
             yield self.__class__.Laptime(splt.event, lap)
 
     def __add__(self, other: TimeMeasurer) -> TimeMeasurer:
@@ -181,6 +189,64 @@ class TimeMeasurer:
         for i, lap in enumerate(self.get_laptime()):
             ret += "{}{}{}{}".format(lap.event, delimiter, lap.time, terminater)
         return ret[:-1]
+
+    def to_csv(
+        self,
+        path: Union[str, Path, None] = None,
+        sep: str = ',',
+        encoding: str = "utf-8"
+    ) -> Path:
+        """記録をcsv出力する
+
+        Args:
+            path (Union[str, Path]):
+                出力するcsvファイルのパス
+            sep (str):
+                csvの区切り文字.
+                デフォルトは ``,`` .
+            encoding (str):
+                ファイルのエンコード.
+                デフォルトは ``utf-8`` .
+
+        Return:
+            出力したcsvファイルへのパス
+        """
+        if path is None:
+            path = DEFAULT_LOG_DIR / (self.name + ".csv")
+        with open(path, 'w', newline='') as f:
+            writer = csv.writer(f, delimiter=sep)
+            writer.writerow(["Event", "Time", "SplitTime", "LapTime"])
+            writer.writerow(["Start", self.start, '-', '-'])
+            rows = []
+            for lap, split in zip(self.get_laptime(), self.get_splittime()):
+                rows.append(
+                    [lap.event, self.start + split.time, split.time, lap.time]
+                )
+            writer.writerows(rows)
+        return Path(path)
+
+    def plot(self, *args, **kwargs):
+        """時間記録をプロットする"""
+        ax = plt.figure(figsize=(6, 9)).add_subplot()
+        x = []
+        y = []
+        for split in self.get_splittime():
+            x.append(split.event)
+            y.append(self.start + split.time)
+        if all((k not in kwargs.keys() for k in ["ls", "linestyle"])):
+            kwargs['ls'] = '-'
+        if all((k not in kwargs.keys() for k in ["lw", "linewidth"])):
+            kwargs['lw'] = 1
+        if all((k not in kwargs.keys() for k in ["color"])):
+            kwargs["color"] = "blue"
+        if all((k not in kwargs.keys() for k in ["marker"])):
+            kwargs["marker"] = 'o'
+        ax.plot(x, y, **kwargs)
+        return ax
+
+    def show(self, *args, **kwargs):
+        self.plot(*args, **kwargs)
+        plt.show()
 
 
 def get_measurer(name: Optional[str] = None) -> TimeMeasurer:
@@ -259,3 +325,12 @@ def time_record(
             return ret
         return __wrapper
     return __time_record
+
+
+if __name__ == "__main__":
+    mt = get_measurer()
+    for i in range(10):
+        mt.record_split("event{}_start".format(i))
+        sleep(randint(1, 5))
+        mt.record_split("event{}_end".format(i))
+    mt.show()
