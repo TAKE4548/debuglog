@@ -5,14 +5,14 @@
 from __future__ import annotations
 import functools
 import csv
-from typing import Optional, Union, Any
+from typing import Optional, Union, Any, Dict, Sequence
 from pathlib import Path
 from collections import namedtuple
 from symtable import Function
 from datetime import datetime as dt
 from datetime import timedelta as td
 from copy import deepcopy
-from random import randint
+from random import random
 from time import sleep
 
 from matplotlib import pyplot as plt
@@ -227,25 +227,34 @@ class TimeMeasurer:
 
     def plot(self, *args, **kwargs):
         """時間記録をプロットする"""
-        ax = plt.figure(figsize=(6, 9)).add_subplot()
-        x = []
-        y = []
-        for split in self.get_splittime():
-            x.append(split.event)
+        def __set_initial_param(
+            params_dict: Dict[str, Any],
+            kws: Sequence[str],
+            value: Any
+        ):
+            if all((k not in params_dict.keys() for k in kws)):
+                params_dict[kws[0]] = value
+        ax = plt.figure(figsize=(5, 4)).add_subplot()
+        x = [0]
+        y = [self.start]
+        labels = ["start"]
+        for i, split in enumerate(self.get_splittime(), 1):
+            labels.append(split.event)
+            x.append(i)
             y.append(self.start + split.time)
-        if all((k not in kwargs.keys() for k in ["ls", "linestyle"])):
-            kwargs['ls'] = '-'
-        if all((k not in kwargs.keys() for k in ["lw", "linewidth"])):
-            kwargs['lw'] = 1
-        if all((k not in kwargs.keys() for k in ["color"])):
-            kwargs["color"] = "blue"
-        if all((k not in kwargs.keys() for k in ["marker"])):
-            kwargs["marker"] = 'o'
+        __set_initial_param(kwargs, ["ls", "linestyle"], '-')
+        __set_initial_param(kwargs, ["lw", "linewidth"], 1)
+        __set_initial_param(kwargs, ["color"], 'b')
+        __set_initial_param(kwargs, ["marker"], '.')
         ax.plot(x, y, **kwargs)
+        ax.set_xticks(list(range(len(labels))))
+        ax.set_xticklabels(labels, rotation=30, ha="right")
+        ax.grid(True)
         return ax
 
     def show(self, *args, **kwargs):
         self.plot(*args, **kwargs)
+        plt.tight_layout()
         plt.show()
 
 
@@ -328,9 +337,11 @@ def time_record(
 
 
 if __name__ == "__main__":
-    mt = get_measurer()
-    for i in range(10):
-        mt.record_split("event{}_start".format(i))
-        sleep(randint(1, 5))
-        mt.record_split("event{}_end".format(i))
+    @time_record("test")
+    def random_sleep():
+        sleep(random())
+
+    mt = get_measurer("test")
+    for i in range(3):
+        random_sleep()
     mt.show()
