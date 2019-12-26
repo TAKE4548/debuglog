@@ -17,6 +17,7 @@ from time import sleep
 
 from matplotlib import pyplot as plt
 
+
 DEFAULT_LOG_DIR = Path("./log")
 
 
@@ -116,9 +117,10 @@ class TimeMeasurer:
             TimeMeasurer.Splittime: 記録したスプリットタイム
         """
         now = dt.now()
-        self.__splittimes.append(
-            self.__class__.Splittime(event, now - self.start)
-        )
+        self.__splittimes.append(self.__class__.Splittime(
+            str(len(self.__splittimes)) if event is None else event,
+            now - self.start
+        ))
         return self.__splittimes[-1]
 
     def get_splittime(self) -> TimeMeasurer.Splittime:
@@ -212,7 +214,7 @@ class TimeMeasurer:
             出力したcsvファイルへのパス
         """
         if path is None:
-            path = DEFAULT_LOG_DIR / (self.name + ".csv")
+            path = DEFAULT_LOG_DIR / "{}.csv".format(self.name)
         with open(path, 'w', newline='') as f:
             writer = csv.writer(f, delimiter=sep)
             writer.writerow(["Event", "Time", "SplitTime", "LapTime"])
