@@ -2,9 +2,17 @@
 
 ## Installation
 
-```
-$ pip install debuglog
-```
+for Windows
+
+1. Download the repository from github.
+    ```
+    $ git clone https://github.com/TAKE4548/debuglog.git
+    ```
+
+1. Install with pip.
+    ```
+    $ pip install .
+    ```
 
 ## Usage
 
@@ -213,3 +221,36 @@ sample_end,2019-12-26 05:21:45.052078,0:00:01.000284,0:00:01.000284
 sample_start,2019-12-26 05:21:45.052078,0:00:01.000284,0:00:00
 sample_end,2019-12-26 05:21:46.052876,0:00:02.001082,0:00:01.000798
 ```
+
+### Create graph of records with the matplotlib.
+
+Create `matplotlib.axes.Axes` when the` plot () `method is called.
+Also, displayed when the `show ()` method is called.
+
+If call the `show ()` method without calling the `plot ()` method, the `plot ()` method will be executed automatically.
+
+Sample code.
+
+```python
+import time
+import random
+import debuglog
+
+
+@debuglog.time_record("sample")
+def randsleep():
+    time.sleep(random.random())
+
+
+def randdelay():
+    time.sleep(random.random())
+
+
+for _ in range(10):
+    randdelay()
+    randsleep()
+mt = debuglog.get_measurer("sample")
+mt.show()
+```
+
+![graph.png](./docs/source/graph.png)

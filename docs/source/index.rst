@@ -7,10 +7,10 @@ Welcome to debuglog's documentation!
 ====================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
-   modules
+   debuglog
 
 Indices and tables
 ==================

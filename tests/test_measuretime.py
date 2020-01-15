@@ -4,6 +4,7 @@
 
 import unittest
 import time
+import tempfile
 from datetime import timedelta as td
 from datetime import datetime as dt
 from pathlib import Path
@@ -13,7 +14,7 @@ import debuglog
 
 class TestTimeMeasurer(unittest.TestCase):
     """ `TimeMeasurer` 関連のテスト"""
-    err = td(milliseconds=100)  # 時刻比較で±100msは許容する
+    err = td(milliseconds=1)  # 時刻比較で±1msは許容する
 
     def setUp(self):
         self.mt = debuglog.get_measurer("test")
@@ -78,10 +79,10 @@ class TestTimeMeasurer(unittest.TestCase):
 
     def test_record_noevent(self):
         """イベント名を指定しなかった記録が保持されているか確認する"""
-        for i in range(2):
+        for _ in range(2):
             self.mt.record_split()
-        for split in self.mt.get_splittime():
-            self.assertIsNone(split.event)
+        for i, split in enumerate(self.mt.get_splittime()):
+            self.assertEqual(split.event, str(i))
 
     def test_record(self):
         """記録された時間が正しいか確認する"""
@@ -105,6 +106,21 @@ class TestTimeMeasurer(unittest.TestCase):
         laptime = self.mt.get_laptime()
         self.assertEqual(next(laptime).time, prev - self.mt.start)
         self.assertEqual(next(laptime).time, self.mt.end - prev)
+
+    def test_from_csv(self):
+        """csvからの読み込みができるか確認する"""
+        with tempfile.TemporaryDirectory() as d:
+            # 基準にするテンポラリファイルを作る
+            self.mt.record_split("test1")
+            self.mt.record_split()
+            base_s = str(self.mt)
+            base_f = Path(d) / "base.csv"
+            self.mt.to_csv(base_f)
+            # 基準のファイルを読んで別のファイルを作る
+            time.sleep(1)
+            read_s = str(debuglog.from_csv(base_f))
+        # 比較
+        self.assertEqual(base_s, read_s)
 
 
 class TestTimeMeasurerManager(unittest.TestCase):
@@ -151,7 +167,10 @@ class TestTimeMeasurerOutput(unittest.TestCase):
         self.sample_meth()
         self.sample_meth()
         path = self.mt.to_csv()
-        csv_path = debuglog.DEFAULT_LOG_FILE.parent / (self.mt.name + '.csv')
+        csv_path = (
+            debuglog.debuglog.DEFAULT_LOG_FILE.parent /
+            (self.mt.name + '.csv')
+        )
         self.assertTrue(csv_path.exists())
         path.unlink()
 

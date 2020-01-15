@@ -31,11 +31,19 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
+    "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
-    'sphinx.ext.todo',
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.todo",
 ]
+# autodoc settings
+autodoc_member_order = 'groupwise'
+autodoc_inherit_docstrings = True
+
+# todo settings
 todo_include_todos = True
+
+intersphinx_mapping = {'python': ('https://docs.python.org/ja/3', None)}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -50,7 +58,7 @@ language = 'en'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['tests.rst']
+exclude_patterns = ['tests.rst', 'setup.rst']
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -58,11 +66,11 @@ exclude_patterns = ['tests.rst']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "basicstrap"
-html_theme_options = {
-    "inner_theme": True,
-    "inner_theme_name": "bootswatch-cyborg"
-}
+html_theme = "nature"
+# html_theme_options = {
+#     "inner_theme": True,
+#     "inner_theme_name": "bootswatch-cyborg"
+# }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

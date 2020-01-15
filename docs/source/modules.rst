@@ -5,3 +5,5 @@ debuglog
    :maxdepth: 4
 
    debuglog
+   setup
+   tests
