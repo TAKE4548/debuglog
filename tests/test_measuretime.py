@@ -14,7 +14,7 @@ import debuglog
 
 class TestTimeMeasurer(unittest.TestCase):
     """ `TimeMeasurer` 関連のテスト"""
-    err = td(milliseconds=1)  # 時刻比較で±1msは許容する
+    err = td(milliseconds=2)  # 時刻比較で±2msは許容する
 
     def setUp(self):
         self.mt = debuglog.get_measurer("test")
@@ -125,7 +125,7 @@ class TestTimeMeasurer(unittest.TestCase):
 
 class TestTimeMeasurerManager(unittest.TestCase):
     """ `TimeMeasurersManager` 関連のテスト"""
-    err = td(milliseconds=1)  # 時刻比較で±1msは許容する
+    err = td(milliseconds=2)  # 時刻比較で±2msは許容する
 
     @debuglog.time_record("test")
     def sample_meth(self):

@@ -20,13 +20,18 @@ from typing import Optional, Union
 from symtable import Function
 from datetime import datetime as dt
 
+from .__main__ import load_configs
+
+# 設定ファイルを読み込み
+configs = load_configs()
+
 # 表示用のINFOレベルを設定
-logging.addLevelName(logging.INFO + 1, "PINFO")
+logging.addLevelName(logging.INFO + 1, configs.VIEW_INFO_LEVEL_NAME)
 
 
 # ロガーのデフォルト設定
-_DEFAULT_LOGGER_NAME = "debug"
-DEFAULT_LOG_FILE = Path("./log/debug.log")
+_DEFAULT_LOGGER_NAME = configs.DEFAULT_LOGGER_NAME
+DEFAULT_LOG_FILE = Path(configs.DEFAULT_LOG_DIR) / configs.DEFAULT_LOG_FILE
 
 # ハンドラのフォーマッタ
 _STREAM_HANDLER_FORMAT = logging.Formatter('\t'.join([

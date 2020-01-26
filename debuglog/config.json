@@ -1,0 +1,6 @@
+{
+    "VIEW_INFO_LEVEL_NAME": "PINFO",
+    "DEFAULT_LOGGER_NAME": "debug",
+    "DEFAULT_LOG_DIR": "./log",
+    "DEFAULT_LOG_FILE": "debug.log"
+}

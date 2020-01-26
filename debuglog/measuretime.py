@@ -17,7 +17,10 @@ from time import sleep
 
 from matplotlib import pyplot as plt, ticker
 
-DEFAULT_LOG_DIR = Path("./log")
+from .__main__ import load_configs
+
+
+DEFAULT_LOG_DIR = Path(load_configs().DEFAULT_LOG_DIR)
 
 
 class TimeMeasurer:

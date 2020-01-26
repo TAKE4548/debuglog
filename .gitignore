@@ -1,5 +1,7 @@
 /*/__pycache__
 /log
-/debuglog.egg-info
-/dist
-/build
+/build/
+/dist/
+/debuglog.egg-info/
+/.venv/
+/.vscode/
